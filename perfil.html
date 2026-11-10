@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Biblioteca Virtual</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <header class="profile-page-header">
+        <h2>Biblioteca Virtual</h2>
+        <a href="index.html?pagina=biblioteca">Voltar à Biblioteca</a>
+    </header>
+
+    <main class="profile-screen">
+        <div class="profile-container">
+
+            <div class="profile-header">
+                <h2>Meu Perfil</h2>
+                <p>Consulta os teus dados de estudante.</p>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+                    <span>👤</span>
+                </div>
+
+                <h3 id="profileFullName">Nome do Aluno</h3>
+                <p>Aluno da Biblioteca Virtual</p>
+
+                <div class="profile-details">
+
+                    <div class="profile-item">
+                        <span>Nome</span>
+                        <strong id="profileName">---</strong>
+                    </div>
+
+                    <div class="profile-item">
+                        <span>Apelido</span>
+                        <strong id="profileSurname">---</strong>
+                    </div>
+
+                    <div class="profile-item">
+                        <span>Idade</span>
+                        <strong id="profileAge">---</strong>
+                    </div>
+
+                    <div class="profile-item">
+                        <span>Classe</span>
+                        <strong id="profileClass">---</strong>
+                    </div>
+
+                    <div class="profile-item">
+                        <span>Email</span>
+                        <strong id="profileEmail">---</strong>
+                    </div>
+
+                </div>
+
+                <button type="button" id="logoutButton">
+                    Terminar sessão
+                </button>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/js/profile.js"></script>
+</body>
+</html>

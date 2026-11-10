@@ -1,0 +1,18 @@
+# Dependências do Node.js
+node_modules/
+
+# Ficheiros de ambiente e segredos
+.env
+.env.*
+
+# Base de dados
+*.sqlite
+*.sqlite3
+*.db
+
+# Ficheiros de registo
+*.log
+
+# Ficheiros temporários
+.DS_Store
+Thumbs.db

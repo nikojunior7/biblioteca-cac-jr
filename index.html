@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3768">
+  <meta name="description" content="Biblioteca Virtual do Colégio Adventista da Chamba. Livros, exames, exercícios, cursos e vídeos educativos da 7.ª à 12.ª classe.">
+  <title>Biblioteca Virtual | Colégio Adventista da Chamba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- TELA INICIAL DE CADASTRO -->
+<section class="registration-screen" id="registrationScreen">
+
+    <div class="registration-card">
+
+        <!-- LOGOTIPO -->
+        <div class="registration-logo">
+            <img src="assets/logo-colegio.jpg"
+                 alt="Colégio Adventista da Chamba">
+        </div>
+
+        <p class="registration-school">
+            COLÉGIO ADVENTISTA DA CHAMBA
+        </p>
+
+        <h1>Bem-vindo à Biblioteca Virtual</h1>
+
+        <p class="registration-description">
+            Preenche os teus dados para acederes à biblioteca
+            virtual da 7.ª à 12.ª classe.
+        </p>
+
+        <!-- FORMULÁRIO -->
+
+<form id="studentRegistrationForm">
+
+    <div class="registration-fields">
+
+        <div class="form-group">
+            <label for="studentFirstName">Nome do aluno</label>
+            <input
+                type="text"
+                id="studentFirstName"
+                placeholder="Introduz o teu nome"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="studentSurname">Apelido</label>
+            <input
+                type="text"
+                id="studentSurname"
+                placeholder="Introduz o teu apelido"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="studentAge">Idade</label>
+            <input
+                type="number"
+                id="studentAge"
+                placeholder="A tua idade"
+                min="10"
+                max="25"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="studentClass">Classe</label>
+            <select id="studentClass" required>
+                <option value="">Seleciona a classe</option>
+                <option>7.ª Classe</option>
+                <option>8.ª Classe</option>
+                <option>9.ª Classe</option>
+                <option>10.ª Classe</option>
+                <option>11.ª Classe</option>
+                <option>12.ª Classe</option>
+            </select>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="studentEmail">Email</label>
+            <input
+                type="email"
+                id="studentEmail"
+                placeholder="exemplo@gmail.com"
+                required
+            >
+        </div>
+
+        
+<!-- SENHA -->
+ <div class="form-group">
+    <label for="studentPassword">Senha</label>
+    <input
+        type="password"
+        id="studentPassword"
+        placeholder="Cria uma senha"
+        minlength="8"
+        required
+    >
+</div>
+<div class="form-group">
+    <label for="confirmPassword">Confirmar senha</label>
+    <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Repete a tua senha"
+        minlength="8"
+        required
+    >
+</div>
+
+
+
+
+    </div>
+
+    <p id="registrationError" class="registration-error" hidden></p>
+
+    <button type="submit" class="registration-submit">
+        Criar conta →
+    </button>
+    <p class="login-switch">
+    Já tens uma conta?
+    <button type="button" id="showLogin">
+        Entrar na conta
+    </button>
+</p>
+
+</form>
+
+
+
+
+
+
+
+       
+
+    </div>
+
+</section>
+
+
+<!-- ECRÃ DE LOGIN -->
+<section id="loginScreen" class="registration-screen is-hidden">
+
+    <div class="registration-card">
+
+        <!-- LOGOTIPO -->
+        <div class="registration-logo">
+            <img src="assets/logo-colegio.jpg"
+                 alt="Colégio Adventista da Chamba">
+        </div>
+
+        <p class="registration-school">
+            COLÉGIO ADVENTISTA DA CHAMBA
+        </p>
+
+        <div class="registration-header">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Entra na tua conta da Biblioteca Virtual.</p>
+        </div>
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <form id="studentLoginForm">
+
+            <div class="form-group full-width">
+
+                <label for="loginEmail">
+                    Endereço de email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Introduz o teu email"
+                    required
+                >
+
+            </div>
+            
+<div class="form-group full-width">
+    <label for="loginPassword">Senha</label>
+
+    <input
+        type="password"
+        id="loginPassword"
+        placeholder="Introduz a tua senha"
+        required
+    >
+</div>
+
+           
+
+            <p id="loginError"
+               class="registration-error"
+               hidden>
+            </p>
+
+            <button type="submit" class="registration-submit">
+                Continuar →
+            </button>
+
+        </form>
+
+        <p class="login-switch">
+            Ainda não tens conta?
+
+            <button type="button" id="showRegistration">
+                Criar conta
+            </button>
+        </p>
+
+        <p class="registration-footer">
+            A tua aprendizagem começa aqui!
+        </p>
+
+    </div>
+
+</section>
+
+
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Página inicial">
+      <img src="assets/logo-colegio.jpg" alt="Logótipo do Colégio Adventista da Chamba">
+      <span class="brand-name">Colégio Adventista<br>da Chamba</span>
+      <span class="brand-divider"></span>
+      <span class="library-name">Biblioteca Virtual<small>Aprende, estuda e evolui!</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    
+<nav class="main-nav" id="mainNav">
+    <a class="nav-link active" href="#inicio">⌂ <span>Início</span></a>
+
+    <a class="nav-link" href="#biblioteca" data-category="livros">▣ <span>Livros</span></a>
+
+    <a class="nav-link" href="#biblioteca" data-category="exames">▤ <span>Exames</span></a>
+
+    <a class="nav-link" href="#biblioteca" data-category="exercicios">✎ <span>Exercícios</span></a>
+
+    <a class="nav-link" href="#biblioteca" data-category="cursos">◆ <span>Cursos</span></a>
+
+    <a class="nav-link" href="#biblioteca" data-category="videos">▶ <span>Vídeos</span></a>
+
+    <a class="nav-link" href="#sobre">ⓘ <span>Sobre</span></a>
+
+    <button class="login-button" id="profileButton">
+        ♟ <span>Meu Perfil</span>
+    </button>
+</nav>
+
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="hero-brand">
+          <img src="assets/logo-colegio.jpg" alt="">
+          <div>
+            <h1>Colégio Adventista<br>da Chamba</h1>
+            <p class="hero-motto">Conhecimento ao alcance de todos!</p>
+          </div>
+        </div>
+        <p class="hero-subtitle">A tua biblioteca virtual da 7.ª à 12.ª classe</p>
+        <form class="search-bar" id="searchForm">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Pesquisar livros, exames, exercícios, cursos..." aria-label="Pesquisar conteúdos">
+          <select id="classFilter" aria-label="Filtrar por classe">
+            <option value="">Todas as classes</option>
+            <option>7.ª Classe</option><option>8.ª Classe</option><option>9.ª Classe</option>
+            <option>10.ª Classe</option><option>11.ª Classe</option><option>12.ª Classe</option>
+          </select>
+          <button type="submit" aria-label="Pesquisar">⌕</button>
+        </form>
+      </div>
+      <div class="hero-slogan">Estuda hoje,<br>conquista amanhã!</div>
+    </section>
+
+    <section class="category-strip" aria-label="Categorias">
+      <button class="category-card cat-books" data-filter="livros"><span class="category-icon">▤</span><span><b>Livros</b><small>Manuais e leituras</small></span><i>›</i></button>
+      <button class="category-card cat-exams" data-filter="exames"><span class="category-icon">▤</span><span><b>Exames</b><small>Anteriores e oficiais</small></span><i>›</i></button>
+      <button class="category-card cat-exercises" data-filter="exercicios"><span class="category-icon">✎</span><span><b>Exercícios</b><small>Pratica e aprende</small></span><i>›</i></button>
+      <button class="category-card cat-courses" data-filter="cursos"><span class="category-icon">◆</span><span><b>Cursos</b><small>Aprende mais</small></span><i>›</i></button>
+      <button class="category-card cat-videos" data-filter="videos"><span class="category-icon">▶</span><span><b>Vídeos de<br>curiosidades</b><small>Descobre o mundo</small></span><i>›</i></button>
+    </section>
+
+    <section class="content-layout" id="biblioteca">
+      <div class="featured-panel">
+        <div class="section-heading">
+          <h2><span>★</span> <span id="sectionTitle">Destaques</span></h2>
+          <button class="text-button" id="showAll">Ver todos <span>→</span></button>
+        </div>
+        <div class="resource-grid" id="resourceGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>Nenhum material encontrado. Experimenta outra pesquisa ou classe.</p>
+      </div>
+
+      <aside class="quick-panel">
+        <h2>Acesso Rápido</h2>
+        <a href="#perfil" class="quick-link" id="profileLink">♟ <span>Meu Perfil</span></a>
+        <a href="#favoritos" class="quick-link" id="favoritesLink">♥ <span>Meus Favoritos</span></a>
+        <a href="#progresso" class="quick-link">▥ <span>Meu Progresso</span></a>
+        <a href="#notificacoes" class="quick-link">♟ <span>Notificações</span></a>
+        <a href="#contacto" class="quick-link">☏ <span>Ajuda e Suporte</span></a>
+        <div class="quote-card"><strong>🏆</strong><span>O conhecimento<br>é o caminho do sucesso!</span></div>
+      </aside>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div>
+        <span class="eyebrow">APRENDER • PARTILHAR • CRESCER</span>
+        <h2>Uma biblioteca para apoiar o teu futuro.</h2>
+        <p>A Biblioteca Virtual do Colégio Adventista da Chamba reúne recursos educativos para apoiar os alunos da 7.ª à 12.ª classe, dentro e fora da sala de aulas.</p>
+      </div>
+      <div class="about-stat"><b>7.ª–12.ª</b><span>Classes abrangidas</span></div>
+      <div class="about-stat"><b>5</b><span>Áreas de aprendizagem</span></div>
+    </section>
+  </main>
+  
+       
+
+  <footer id="contacto">
+    <div class="footer-brand"><img src="logo-colegio.jpg" alt=""><b>Colégio Adventista da Chamba</b></div>
+    <p>Biblioteca Virtual · Conhecimento ao alcance de todos.</p>
+    <p class="copyright">© <span id="year"></span> Colégio Adventista da Chamba. Todos os direitos reservados.</p>
+  </footer>
+
+  <dialog id="loginDialog" class="login-dialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Fechar">×</button></form>
+    <div class="dialog-logo"><img src="assets/logo-colegio.jpg" alt=""></div>
+    <h2>Bem-vindo à biblioteca</h2>
+    <p>O acesso de alunos será disponibilizado quando o sistema de contas estiver ligado ao backend.</p>
+    <button class="primary-action" id="closeLogin">Entendi</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
