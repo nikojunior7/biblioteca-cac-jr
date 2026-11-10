@@ -9,7 +9,7 @@ const {
     updateUser,
     updateUserStatus,
     deleteUser
-} = require("../controllers/userController");
+} = require("./userController");
 
 const {
     authenticateToken,
