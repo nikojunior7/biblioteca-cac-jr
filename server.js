@@ -24,7 +24,7 @@ const allowedOrigins = [
     "http://127.0.0.1:5501",
     "http://localhost:5501",
 
-    "https://biblioteca-cac-jr-niko.vibehost.space/",
+    "https://bibliojr-niko.vibehost.space/",
 
     process.env.FRONTEND_URL
 ].filter(Boolean);
