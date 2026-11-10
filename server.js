@@ -1,5 +1,4 @@
 
-
 require("dotenv").config();
 
 const express = require("express");
@@ -14,7 +13,7 @@ const userRoutes = require("./userroutes");
 
 const PORT = process.env.PORT || 3000;
 
-// 1. Cabeçalhos de segurança
+// 1. Segurança
 app.use(helmet());
 
 // 2. Endereços autorizados
@@ -23,9 +22,7 @@ const allowedOrigins = [
     "http://localhost:5500",
     "http://127.0.0.1:5501",
     "http://localhost:5501",
-
-    "https://bibliojr-niko.vibehost.space/",
-
+    "https://bibliojr-niko.vibehost.space",
     process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -37,12 +34,15 @@ app.use(cors({
 
         return callback(new Error("Origem não autorizada pelo CORS."));
     },
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
-// 3. Limite dos dados recebidos
+
+// 3. Dados recebidos
 app.use(express.json({ limit: "10kb" }));
 
-// 4. Proteção do login
+// 4. Limite de tentativas de login
 const loginLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     limit: 10,
@@ -51,16 +51,15 @@ const loginLimiter = rateLimit({
     skipSuccessfulRequests: true,
     message: {
         success: false,
-        message: "Demasiadas tentativas. Aguarda 15 minutos e tenta novamente."
+        message: "Demasiadas tentativas. Aguarda 15 minutos."
     }
 });
 
-app.post("/api/users/login", loginLimiter);
+// 5. Rota de teste
+app.get("/", (req, res) => {
+    res.send("Backend da Biblioteca Virtual funcionando!");
+});
 
-// 5. Rotas dos utilizadores
-app.use("/api/users", userRoutes);
-
-// 6. Rota principal
 app.get("/api", (req, res) => {
     res.json({
         success: true,
@@ -68,7 +67,12 @@ app.get("/api", (req, res) => {
     });
 });
 
+// 6. Rotas dos utilizadores
+// O loginLimiter deve ser aplicado na rota POST /login
+app.use("/api/users", userRoutes);
+
 // 7. Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor iniciado na porta ${PORT}`);
 });
+```
