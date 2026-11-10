@@ -15,7 +15,7 @@ const {
     authenticateToken,
     requireAdmin,
     requireSelfOrAdmin
-} = require("../middleware/auth");
+} = require("./auth");
 // Rotas públicas
 router.post("/register", registerUser);
 router.post("/login", loginUser);
