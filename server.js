@@ -10,7 +10,7 @@ const { rateLimit } = require("express-rate-limit");
 require("./database");
 
 const app = express();
-const userRoutes = require("./userRoutes");
+const userRoutes = require("./userroutes");
 
 const PORT = process.env.PORT || 3000;
 
