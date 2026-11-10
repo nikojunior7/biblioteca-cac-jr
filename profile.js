@@ -2,7 +2,7 @@
 const STORAGE_KEY = "bibliotecaStudent";
 const TOKEN_KEY = "bibliotecaToken";
 
-const API_URL = "https://biblioteca-cac-jr-6.onrender.com";
+const API_URL = "https://biblioteca-cac-jr-7.onrender.com";
 
 async function loadStudentProfile() {
     const token = localStorage.getItem(TOKEN_KEY);
