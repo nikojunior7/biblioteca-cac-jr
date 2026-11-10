@@ -6,8 +6,7 @@ const fs = require("fs");
 // Caminho da base de dados
 const dbPath = process.env.DB_PATH
     ? path.resolve(process.env.DB_PATH)
-    : path.join(__dirname, "..", "database.sqlite");
-
+    : path.join(__dirname, "database.sqlite");
 // Criar a pasta, caso ainda não exista
 fs.mkdirSync(path.dirname(dbPath), {
     recursive: true
