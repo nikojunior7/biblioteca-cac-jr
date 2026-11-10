@@ -7,10 +7,10 @@ const cors = require("cors");
 const helmet = require("helmet");
 const { rateLimit } = require("express-rate-limit");
 
-require("./config/database");
+require("./database");
 
 const app = express();
-const userRoutes = require("./routes/userRoutes");
+const userRoutes = require("./userRoutes");
 
 const PORT = process.env.PORT || 3000;
 
