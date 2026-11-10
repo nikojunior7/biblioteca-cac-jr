@@ -75,4 +75,3 @@ app.use("/api/users", userRoutes);
 app.listen(PORT, () => {
     console.log(`Servidor iniciado na porta ${PORT}`);
 });
-```
