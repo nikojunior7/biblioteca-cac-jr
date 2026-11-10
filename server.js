@@ -23,6 +23,9 @@ const allowedOrigins = [
     "http://localhost:5500",
     "http://127.0.0.1:5501",
     "http://localhost:5501",
+
+    "https://biblioteca-cac-jr-niko.vibehost.space/",
+
     process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -36,7 +39,6 @@ app.use(cors({
     },
     credentials: true
 }));
-
 // 3. Limite dos dados recebidos
 app.use(express.json({ limit: "10kb" }));
 
