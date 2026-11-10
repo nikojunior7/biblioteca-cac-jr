@@ -114,7 +114,7 @@ renderResources();
    SISTEMA DE CADASTRO E LOGIN
 ================================= */
 
-const API_URL = "https://biblioteca-cac-jr-7.onrender.com";
+const API_URL = "https://biblioteca-cac-jr-puq6.onrender.com";
 
 // Ecrãs
 const registrationScreen = document.getElementById("registrationScreen");
